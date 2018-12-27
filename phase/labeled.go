@@ -8,10 +8,18 @@ type Labeled struct {
 	BasePhase
 }
 
-func NewLabeled() *Labeled {
-	return &Labeled{
-		BasePhase: BasePhase{
-			PhaseType: PhaseType.Labeled,
-		},
+func newLabeled() Labeled {
+	return Labeled{
+		BasePhase: newBasePhase(phaseType.Labeled),
 	}
+}
+
+func (p Labeled) ToClosed() Closed {
+	println("Labeled.ToClose")
+
+	return newClosed()
+}
+
+func (p Labeled) Run() {
+	println("Labeled.Run")
 }

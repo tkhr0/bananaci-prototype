@@ -1,4 +1,4 @@
-package PhaseType
+package phaseType
 
 type PhaseType int
 
