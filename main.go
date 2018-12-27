@@ -1,27 +1,19 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/tkhr0/bananaci-prototype/phase"
+	"github.com/tkhr0/bananaci-prototype/banana"
 )
 
-type Banana struct {
-	phase.Phase
-}
-
 func main() {
-	ob := Banana{
-		Phase: phase.NewOpened(),
-	}
-
-	fmt.Println(ob.GetName())
+	ob := banana.NewBanana()
 	ob.Run()
 
-	lb := Banana{
-		Phase: phase.NewLabeled(),
-	}
+	ob.ToLabeled()
+	ob.Run()
 
-	fmt.Println(lb.GetName())
-	lb.Run() // panic
+	ob.ToClosed()
+	ob.Run()
+
+	ob.ToLabeled() // panic
+	ob.Run()
 }
