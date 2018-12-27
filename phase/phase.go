@@ -11,7 +11,7 @@ type Phase interface {
 }
 
 type BasePhase struct {
-	PhaseType PhaseType.PhaseType
+	phaseType.PhaseType
 }
 
 func (p BasePhase) Run() {

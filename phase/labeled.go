@@ -8,10 +8,5 @@ type Labeled struct {
 	BasePhase
 }
 
-func NewLabeled() *Labeled {
-	return &Labeled{
-		BasePhase: BasePhase{
-			PhaseType: PhaseType.Labeled,
-		},
 	}
 }

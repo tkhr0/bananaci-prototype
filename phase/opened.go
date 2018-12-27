@@ -13,7 +13,7 @@ type Opened struct {
 func NewOpened() *Opened {
 	return &Opened{
 		BasePhase: BasePhase{
-			PhaseType: PhaseType.Opened,
+			PhaseType: phaseType.Opened,
 		},
 	}
 }
