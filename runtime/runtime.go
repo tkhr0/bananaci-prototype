@@ -1,25 +1,25 @@
-package banana
+package runtime
 
 import (
 	"github.com/tkhr0/bananaci-prototype/phase"
 )
 
-type Banana struct {
+type Runtime struct {
 	phase.Phase
 }
 
-func NewBanana() *Banana {
-	return &Banana{
+func NewRuntime() *Runtime {
+	return &Runtime{
 		Phase: phase.NewOpened(),
 	}
 }
 
-func (b *Banana) ToLabeled() {
+func (b *Runtime) ToLabeled() {
 	nextPhase := b.Phase.ToLabeled()
 	b.Phase = nextPhase
 }
 
-func (b *Banana) ToClosed() {
+func (b *Runtime) ToClosed() {
 	nextPhase := b.Phase.ToClosed()
 	b.Phase = nextPhase
 }
