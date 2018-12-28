@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/tkhr0/bananaci-prototype/banana"
+	"github.com/tkhr0/bananaci-prototype/runtime"
 )
 
 func main() {
-	ob := banana.NewBanana()
+	ob := runtime.NewRuntime()
 	ob.Run()
 
 	ob.ToLabeled()
