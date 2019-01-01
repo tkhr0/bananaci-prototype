@@ -1,19 +1,12 @@
 package main
 
 import (
-	"github.com/tkhr0/bananaci-prototype/runtime"
+	"github.com/tkhr0/bananaci-prototype/server"
 )
 
 func main() {
-	ob := runtime.NewRuntime()
-	ob.Run()
+	maxWorkers := 3
+	maxQueues := 10000
 
-	ob.ToLabeled()
-	ob.Run()
-
-	ob.ToClosed()
-	ob.Run()
-
-	ob.ToLabeled() // panic
-	ob.Run()
+	server.Call(maxWorkers, maxQueues)
 }
