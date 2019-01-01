@@ -8,6 +8,7 @@ type Phase interface {
 	Run()
 	Done()
 	GetName() string
+	GetPhaseType() phaseType.PhaseType
 
 	ToLabeled() Labeled
 	ToClosed() Closed
@@ -35,6 +36,10 @@ func (p BasePhase) Done() {
 
 func (p BasePhase) GetName() string {
 	return p.PhaseType.String()
+}
+
+func (p BasePhase) GetPhaseType() phaseType.PhaseType {
+	return p.PhaseType
 }
 
 func (p BasePhase) ToLabeled() Labeled {
