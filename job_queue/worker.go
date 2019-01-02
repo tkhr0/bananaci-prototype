@@ -24,9 +24,5 @@ func (w *worker) start() {
 }
 
 func (w *worker) run(j Job) {
-	next := j.Run()
-
-	if next {
-		w.dispatcher.Add(j)
-	}
+	j.Run()
 }

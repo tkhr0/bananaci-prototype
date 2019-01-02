@@ -15,17 +15,13 @@ func NewJob(r runtime.Runtime) *Job {
 	}
 }
 
-func (j *Job) Run() bool {
+func (j *Job) Run() {
 	switch j.GetPhaseType() {
 	case phaseType.Opened:
 		j.Runtime.ToLabeled()
 		j.Runtime.Run()
-		return true
 	case phaseType.Labeled:
 		j.Runtime.ToClosed()
 		j.Runtime.Run()
-		return true
-	default:
-		return false
 	}
 }
