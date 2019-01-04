@@ -11,8 +11,7 @@ import (
 	"github.com/tkhr0/bananaci-prototype/runtime"
 )
 
-func Call(maxWorkers int, maxQueues int) {
-	d := jobQueue.NewDispatcher(maxWorkers, maxQueues)
+func Call(d *jobQueue.Dispatcher) {
 
 	sigHandler(d)
 
