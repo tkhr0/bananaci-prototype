@@ -1,7 +1,10 @@
 package phase
 
 import (
-	"github.com/tkhr0/bananaci-prototype/phase/phase_type"
+	"fmt"
+	"time"
+
+	phaseType "github.com/tkhr0/bananaci-prototype/phase/phase_type"
 )
 
 type Labeled struct {
@@ -21,5 +24,8 @@ func (p Labeled) ToClosed() Closed {
 }
 
 func (p Labeled) Run() {
-	println("Labeled.Run")
+	for i := 0; i < 3; i++ {
+		time.Sleep(1 * time.Second)
+		fmt.Printf("%p Labeled.Run: running...#%d\n", &p, i+1)
+	}
 }

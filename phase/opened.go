@@ -2,8 +2,9 @@ package phase
 
 import (
 	"fmt"
+	"time"
 
-	"github.com/tkhr0/bananaci-prototype/phase/phase_type"
+	phaseType "github.com/tkhr0/bananaci-prototype/phase/phase_type"
 )
 
 type Opened struct {
@@ -20,7 +21,10 @@ func NewOpened() *Opened {
 }
 
 func (p Opened) Run() {
-	fmt.Println("Opened.Run")
+	for i := 0; i < 3; i++ {
+		time.Sleep(1 * time.Second)
+		fmt.Printf("%p Opened.Run: running...#%d\n", &p, i+1)
+	}
 }
 
 func (p Opened) ToLabeled() Labeled {
