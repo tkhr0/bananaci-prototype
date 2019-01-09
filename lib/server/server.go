@@ -7,8 +7,8 @@ import (
 	"syscall"
 	"time"
 
-	jobQueue "github.com/tkhr0/bananaci-prototype/job_queue"
-	"github.com/tkhr0/bananaci-prototype/runtime"
+	jobQueue "github.com/tkhr0/bananaci-prototype/lib/job_queue"
+	"github.com/tkhr0/bananaci-prototype/lib/runtime"
 )
 
 func Call(d *jobQueue.Dispatcher) {

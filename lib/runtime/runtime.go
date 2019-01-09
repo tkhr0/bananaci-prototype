@@ -1,7 +1,7 @@
 package runtime
 
 import (
-	"github.com/tkhr0/bananaci-prototype/phase"
+	"github.com/tkhr0/bananaci-prototype/lib/phase"
 )
 
 type Runtime struct {

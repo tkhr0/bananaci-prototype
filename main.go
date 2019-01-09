@@ -3,8 +3,8 @@ package main
 import (
 	"sync"
 
-	jobQueue "github.com/tkhr0/bananaci-prototype/job_queue"
-	"github.com/tkhr0/bananaci-prototype/server"
+	jobQueue "github.com/tkhr0/bananaci-prototype/lib/job_queue"
+	"github.com/tkhr0/bananaci-prototype/lib/server"
 )
 
 func main() {
