@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	phaseType "github.com/tkhr0/bananaci-prototype/phase/phase_type"
+	phaseType "github.com/tkhr0/bananaci-prototype/lib/phase/phase_type"
 )
 
 type Opened struct {

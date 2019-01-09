@@ -1,7 +1,7 @@
 package phase
 
 import (
-	"github.com/tkhr0/bananaci-prototype/phase/phase_type"
+	"github.com/tkhr0/bananaci-prototype/lib/phase/phase_type"
 )
 
 type Phase interface {

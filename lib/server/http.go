@@ -7,9 +7,9 @@ import (
 	"os"
 	"strconv"
 
-	jobQueue "github.com/tkhr0/bananaci-prototype/job_queue"
-	"github.com/tkhr0/bananaci-prototype/phase"
-	"github.com/tkhr0/bananaci-prototype/runtime"
+	jobQueue "github.com/tkhr0/bananaci-prototype/lib/job_queue"
+	"github.com/tkhr0/bananaci-prototype/lib/phase"
+	"github.com/tkhr0/bananaci-prototype/lib/runtime"
 )
 
 var dispatcher *jobQueue.Dispatcher

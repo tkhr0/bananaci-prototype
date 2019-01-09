@@ -1,8 +1,8 @@
 package jobQueue
 
 import (
-	"github.com/tkhr0/bananaci-prototype/phase/phase_type"
-	"github.com/tkhr0/bananaci-prototype/runtime"
+	"github.com/tkhr0/bananaci-prototype/lib/phase/phase_type"
+	"github.com/tkhr0/bananaci-prototype/lib/runtime"
 )
 
 type Job struct {
