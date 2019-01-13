@@ -16,8 +16,11 @@ package cmd
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/spf13/cobra"
+	"github.com/tkhr0/bananaci-prototype/lib"
+	"github.com/tkhr0/bananaci-prototype/lib/build"
 )
 
 // debugCmd represents the debug command
@@ -30,9 +33,8 @@ and usage of using your command. For example:
 Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
-	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("debug called")
-	},
+	Args: cobra.ExactArgs(1),
+	Run:  debugCmdMain,
 }
 
 func init() {
@@ -47,4 +49,23 @@ func init() {
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	// debugCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+}
+
+func debugCmdMain(cmd *cobra.Command, args []string) {
+	var err error
+
+	b, err := build.NewBuilder(
+		*lib.NewRepository("tkhr0", "rails-sample", args[0]),
+		"/tmp",
+	)
+	if err != nil {
+		fmt.Printf("%s\n", err)
+		os.Exit(1)
+	}
+
+	err = b.Build()
+	if err != nil {
+		fmt.Printf("%s\n", err)
+		os.Exit(1)
+	}
 }
