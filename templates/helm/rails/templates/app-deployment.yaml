@@ -27,24 +27,24 @@ spec:
         - name: sockets
           emptyDir: {}
       containers:
-        - name: {{ .Values.web.name }}
-          image: "{{ .Values.web.image.repository }}:{{ .Values.web.image.tag }}"
-          imagePullPolicy: {{ .Values.web.image.pullPolicy }}
+        - name: {{ .Values.nginx.name }}
+          image: "{{ .Values.nginx.image.repository }}:{{ .Values.nginx.image.tag }}"
+          imagePullPolicy: {{ .Values.nginx.image.pullPolicy }}
           ports:
             # service から受けるポート
             - name: http
-              containerPort: {{ .Values.web.port.http }}
+              containerPort: {{ .Values.nginx.port.http }}
           volumeMounts:
             - mountPath: /sockets
               name: sockets
 
-        - name: {{ .Values.app.name }}
-          image: "{{ .Values.app.image.repository }}:{{ .Values.app.image.tag }}"
+        - name: {{ .Values.rails.name }}
+          image: "{{ .Values.rails.image.repository }}:{{ .Values.rails.image.tag }}"
           # デフォルトで pull しにいってコケるので Never させないようにする
-          imagePullPolicy: {{ .Values.app.image.pullPolicy }}
+          imagePullPolicy: {{ .Values.rails.image.pullPolicy }}
           env:
             - name: DB_HOST
-              value: "{{ .Values.app.dbHost }}"
+              value: "{{ .Values.rails.dbHost }}"
 
           volumeMounts:
             - mountPath: /sockets
