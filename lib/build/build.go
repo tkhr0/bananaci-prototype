@@ -9,10 +9,11 @@ import (
 
 type Builder interface {
 	Build() error
+	Up() error
 }
 
-func NewBuilder(repo lib.Repository, cloneDir string) (Builder, error) {
-	builder, err := localBuilder.NewLocalBuilder(repo, cloneDir)
+func NewBuilder(repo lib.Repository) (Builder, error) {
+	builder, err := localBuilder.NewLocalBuilder(repo)
 	if err != nil {
 		return nil, fmt.Errorf("%s", err)
 	}

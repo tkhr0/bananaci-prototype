@@ -56,7 +56,6 @@ func debugCmdMain(cmd *cobra.Command, args []string) {
 
 	b, err := build.NewBuilder(
 		*lib.NewRepository("tkhr0", "rails-sample", args[0]),
-		"/tmp",
 	)
 	if err != nil {
 		fmt.Printf("%s\n", err)
@@ -64,6 +63,12 @@ func debugCmdMain(cmd *cobra.Command, args []string) {
 	}
 
 	err = b.Build()
+	if err != nil {
+		fmt.Printf("%s\n", err)
+		os.Exit(1)
+	}
+
+	err = b.Up()
 	if err != nil {
 		fmt.Printf("%s\n", err)
 		os.Exit(1)

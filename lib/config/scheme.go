@@ -4,11 +4,12 @@ type (
 	// root
 	Config struct {
 		// .services
-		Services []Service `yaml:"services"`
+		Images   []BuildImage `yaml:"images"`
+		Services Services     `yaml:"services"`
 	}
 
 	// .services.n
-	Service struct {
+	BuildImage struct {
 		Name  string `yaml:"name"`
 		Build `yaml:"build"`
 	}
@@ -17,5 +18,21 @@ type (
 	Build struct {
 		Context    string `yaml:"context"`
 		Dockerfile string `yaml:"dockerfile"`
+	}
+
+	Services struct {
+		Nginx
+		Rails
+	}
+
+	Nginx struct {
+		Name string `yaml:"name"`
+		Port int    `yaml:"port"`
+	}
+
+	Rails struct {
+		Name   string `yaml:"name"`
+		Port   int    `yaml:"port"`
+		DbHost int    `yaml:"dbHost"`
 	}
 )
