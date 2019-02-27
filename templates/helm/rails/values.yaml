@@ -16,8 +16,7 @@ rails:
     pullPolicy: IfNotPresent
     repository: ruby
     tag: 2.6-slim
-  port:
-    http: 3000
+  port: 3000
   dbHost: 3306
 
 mysql:

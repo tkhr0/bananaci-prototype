@@ -7,6 +7,13 @@ import (
 	yaml "gopkg.in/yaml.v2"
 )
 
+const Directory string = ".bananaci"
+
+// FilePath is リポジトリ内の BananaCI の設定ファイルパス
+const FilePath string = ".bananaci/config.yaml"
+
+const TmpDir string = ".bananaci/tmp"
+
 // Yaml を読み込む
 func UnmarshalFromFile(yamlPath string) (*Config, error) {
 	content, err := ioutil.ReadFile(yamlPath)
